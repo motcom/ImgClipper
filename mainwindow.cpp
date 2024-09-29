@@ -4,6 +4,38 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
+    helpTextEdit.setMarkdown(
+        "## 操作方法\n"
+        "#### Normal mode\n"
+        "|キー|説明|\n"
+        "|---|---|\n"
+        "|f1|このヘルプを開く|"
+        "|p or ctrl+v|クリップボードの画像をリストにプッシュして表示|\n"
+        "|right or l|リストを次の画像へ|\n"
+        "|left or h|リストを前の画像へ|\n"
+        "|z or +|ズームアップとzoom modeへ移行|\n"
+        "|x or -|ズームダウンとzoom modeへ移行|\n"
+        "|t|常に最上面|\n"
+        "|s or w|pictureフォルダへリスト画像すべてsave|\n"
+        "|>|透明度を下げる|\n"
+        "|<|透明度を上げる|\n"
+        "|tab|フレームレスウィンドウ切り替え|\n"
+        "|esc|終了|\n"
+        "\n"
+        "#### zoom mode\n"
+        "|キー|説明|\n"
+        "|---|---|\n"
+        "|f1|このヘルプを開く|"
+        "|esc|終了|\n"
+        "|z or +|ズームアップ|\n"
+        "|x or -|ズームダウン|\n"
+        "|right or l|画像を右へ|\n"
+        "|left or h|画像を左へ|\n"
+        "|up or k|画像を上へ|\n"
+        "|down or j|画像を下へ|\n"
+        "|tab|フレームレスウィンドウ切り替え|\n"
+        );
+    helpTextEdit.setReadOnly(true);
 }
 MainWindow::~MainWindow() {}
 
@@ -24,6 +56,10 @@ void MainWindow::normalBranch(QKeyEvent *key)
 {
     switch(key->key())
     {
+    case Qt::Key_F1:
+        helpTextEdit.show();
+        break;
+
     // Zoom
     case Qt::Key_Plus:
     case Qt::Key_Z:
@@ -102,6 +138,10 @@ void MainWindow::zoomBranch(QKeyEvent *key)
 
     // state nomal
     switch (key->key()) {
+
+    case Qt::Key_F1:
+        helpTextEdit.show();
+        break;
 
     // Escape
     case Qt::Key_Escape:

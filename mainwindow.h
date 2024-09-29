@@ -3,24 +3,25 @@
 
 #include <QApplication>
 #include <QClipboard>
+#include <QDateTime>
 #include <QDebug>
+#include <QDir>
+#include <QGraphicsWidget>
 #include <QImage>
 #include <QKeyEvent>
 #include <QList>
 #include <QMainWindow>
-#include <QMimeData>
-#include <QPainter>
-#include <QSharedPointer>
-#include <QPaintEvent>
-#include <QStandardPaths>
-#include <QDateTime>
-#include <QDir>
 #include <QMessageBox>
+#include <QMimeData>
+#include <QPaintEvent>
+#include <QPainter>
 #include <QRect>
+#include <QSharedPointer>
 #include <QSize>
+#include <QStandardPaths>
 #include <QTransform>
-#include <QGraphicsWidget>
 #include <QVector2D>
+#include <QTextEdit>
 
 class MainWindow : public QMainWindow
 {
@@ -41,6 +42,7 @@ private:
 
 
     // private member
+    QTextEdit helpTextEdit;
     QList<QSharedPointer<QImage>> imgList;
     int curIndex = -1;
     int maxIndex = -1;
@@ -72,5 +74,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
 
     ~MainWindow();
+
+private:
+    const QString helpString =
+      ""
+      "";
+
+
 };
 #endif // MAINWINDOW_H
