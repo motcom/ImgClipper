@@ -234,12 +234,10 @@ void MainWindow::paintEvent(QPaintEvent *) {
     transform.translate(-centerX,-centerY);
     transform.translate(imgOffset.x(),imgOffset.y());
 
-
     painter.setTransform(transform);
     // 画像のレンダリング
     painter.drawImage(0,0,scaledImg);
 }
-
 
 
 void MainWindow::alwaysOnTop() {

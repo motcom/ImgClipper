@@ -6,7 +6,6 @@
 #include <QDateTime>
 #include <QDebug>
 #include <QDir>
-#include <QGraphicsWidget>
 #include <QImage>
 #include <QKeyEvent>
 #include <QList>
@@ -76,9 +75,6 @@ public:
     ~MainWindow();
 
 private:
-    const QString helpString =
-      ""
-      "";
 
 
 };
