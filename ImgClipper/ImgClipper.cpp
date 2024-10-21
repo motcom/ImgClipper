@@ -36,6 +36,9 @@ MainWindow::MainWindow(QWidget *parent)
 		"|tab|Toggle frameless window|\n"
         );
     helpTextEdit.setReadOnly(true);
+	 setWindowTitle("ImgClipper");
+	 setWindowIcon(QIcon(":/Icon/Icon/ImgClipper.ico"));
+    
 }
 MainWindow::~MainWindow() {}
 
@@ -320,7 +323,8 @@ void MainWindow::save() {
     clip->setText(picturePath);
 
     QMessageBox::information
-        (this,"保存完了",picturePath + "に正しく画像を書き込めました\n保存後のパスはクリップボードに取得しました");
+        (this,"Saved",QString("The image has been successfully written to ") + picturePath 
+           + ". \nThe path after saving has been copied to the clipboard.");
 }
 
 
