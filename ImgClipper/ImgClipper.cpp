@@ -307,7 +307,7 @@ void MainWindow::save() {
     QDir qDir;
     if (!qDir.exists(picturePath)) {
         if(!qDir.mkpath(picturePath)) {
-            QMessageBox::critical(this,"エラー","ディレクトリが正しく作られませんでした");
+            QMessageBox::critical(this,"Error","The directory was not created correctly.");
             return;
         }
     }
